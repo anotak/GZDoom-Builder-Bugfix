@@ -153,9 +153,9 @@ namespace CodeImp.DoomBuilder.Windows
 			preventchanges = true;
 
             argscontrol.Reset();
-
-			// Keep this list
-			this.lines = lines;
+            undocreated = false;
+            // Keep this list
+            this.lines = lines;
 			if(lines.Count > 1) this.Text = "Edit Linedefs (" + lines.Count + ")";
 			linedefprops = new List<LinedefProperties>();
 			

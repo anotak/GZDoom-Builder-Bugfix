@@ -164,7 +164,7 @@ namespace CodeImp.DoomBuilder.Windows
 		public void Setup(ICollection<Thing> things) 
 		{
 			preventchanges = true;
-
+            undocreated = false;
             argscontrol.Reset();
 
             // Keep this list

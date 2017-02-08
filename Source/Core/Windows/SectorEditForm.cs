@@ -90,7 +90,7 @@ namespace CodeImp.DoomBuilder.Windows
 		public void Setup(ICollection<Sector> sectors)
 		{
 			preventchanges = true; //mxd
-            
+            undocreated = false;
             // Keep this list
             this.sectors = sectors;
 			if(sectors.Count > 1) this.Text = "Edit Sectors (" + sectors.Count + ")";
