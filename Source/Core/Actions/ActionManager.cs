@@ -322,14 +322,20 @@ namespace CodeImp.DoomBuilder.Actions
 
             // Go for all methods on obj
             MethodInfo[] methods = type.GetMethods(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static);
-            foreach (MethodInfo m in methods)
+            //foreach (MethodInfo m in methods)
+            int methodsCount = methods.Length;
+            for(int i = 0; i < methodsCount; i++)
             {
+                MethodInfo m = methods[i];
                 // Check if the method has this attribute
                 ActionAttribute[] attrs = (ActionAttribute[])m.GetCustomAttributes(typeof(BeginActionAttribute), true);
 
                 // Go for all attributes
-                foreach (ActionAttribute a in attrs)
+                //foreach (ActionAttribute a in attrs)
+                int attrsCount = attrs.Length;
+                for(int j = 0; j < attrsCount; j++)
                 {
+                    ActionAttribute a = attrs[j];
                     // Create a delegate for this method
                     ActionDelegate del = (ActionDelegate)Delegate.CreateDelegate(typeof(ActionDelegate), obj, m);
 
@@ -344,8 +350,11 @@ namespace CodeImp.DoomBuilder.Actions
                 attrs = (ActionAttribute[])m.GetCustomAttributes(typeof(EndActionAttribute), true);
 
                 // Go for all attributes
-                foreach (ActionAttribute a in attrs)
+                //foreach (ActionAttribute a in attrs)
+                attrsCount = attrs.Length;
+                for (int j = 0; j < attrsCount; j++)
                 {
+                    ActionAttribute a = attrs[j];
                     // Create a delegate for this method
                     ActionDelegate del = (ActionDelegate)Delegate.CreateDelegate(typeof(ActionDelegate), obj, m);
 

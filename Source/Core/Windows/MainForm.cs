@@ -898,7 +898,7 @@ namespace CodeImp.DoomBuilder.Windows
 			
 			// Refresh
 			statusbar.Invalidate();
-			this.Update();
+			//this.Update(); // ano - this is unneeded afaict and slow
 		}
 		
 		// This changes status text to Ready
