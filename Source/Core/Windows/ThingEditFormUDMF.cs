@@ -165,8 +165,10 @@ namespace CodeImp.DoomBuilder.Windows
 		{
 			preventchanges = true;
 
-			// Keep this list
-			this.things = things;
+            argscontrol.Reset();
+
+            // Keep this list
+            this.things = things;
 			if(things.Count > 1) this.Text = "Edit Things (" + things.Count + ")";
 			hint.Visible = things.Count > 1; //mxd
 			hintlabel.Visible = things.Count > 1; //mxd
