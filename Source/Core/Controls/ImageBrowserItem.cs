@@ -5,6 +5,7 @@ using System.Drawing;
 using CodeImp.DoomBuilder.Data;
 using System.Drawing.Drawing2D;
 using System.Text;
+using System.Collections.Generic;
 #endregion
 
 namespace CodeImp.DoomBuilder.Controls
@@ -39,6 +40,9 @@ namespace CodeImp.DoomBuilder.Controls
         private static StringBuilder size_builder;
         private static Font pixelSizeFont;
 
+        // ano - imagebrowseritem cache
+        private static Dictionary<long, ImageBrowserItem> itemCache = new Dictionary<long, ImageBrowserItem>(2048);
+
         #endregion
 
         #region ================== Properties
@@ -70,6 +74,20 @@ namespace CodeImp.DoomBuilder.Controls
 			this.namewidth = (int)Math.Ceiling(General.Interface.MeasureString(icon.Name, SystemFonts.MessageBoxFont, 10000, StringFormat.GenericTypographic).Width);
 			this.shortnamewidth = (int)Math.Ceiling(General.Interface.MeasureString(icon.ShortName, SystemFonts.MessageBoxFont, 10000, StringFormat.GenericTypographic).Width);
 		}
+
+        public static ImageBrowserItem FromImage(ImageData image, string tooltip, bool showfullname)
+        {
+            if (!itemCache.ContainsKey(image.LongName) || itemCache[image.LongName].Icon.IsDisposed)
+            {
+                itemCache.Add(image.LongName, new ImageBrowserItem(image, tooltip, showfullname));
+            }
+
+            ImageBrowserItem newItem = itemCache[image.LongName];
+            newItem.tooltip = tooltip;
+            newItem.showfullname = showfullname;
+
+            return newItem;
+        }
 
 		#endregion
 
@@ -284,6 +302,12 @@ namespace CodeImp.DoomBuilder.Controls
 			return this.TextureName.ToUpperInvariant().CompareTo(other.TextureName.ToUpperInvariant());
 		}
 
-		#endregion
-	}
+
+        public static void ClearCache()
+        {
+            itemCache = new Dictionary<long, ImageBrowserItem>();
+        }
+
+        #endregion
+    }
 }

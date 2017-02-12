@@ -65,8 +65,8 @@ namespace CodeImp.DoomBuilder.Controls
 		// Filtered items
 		private List<ImageBrowserItem> visibleitems;
 
-		//mxd
-		private int texturetype;
+        //mxd
+        private int texturetype;
 		
 		#endregion
 
@@ -474,7 +474,7 @@ namespace CodeImp.DoomBuilder.Controls
         //      C# not Java.
 		public void AddItem(ImageData image, string tooltip = "")
 		{
-			items.Add(new ImageBrowserItem(image, tooltip, uselongtexturenames));
+			items.Add(ImageBrowserItem.FromImage(image,tooltip,uselongtexturenames));
 		}
 
 		// This fills the list based on the objectname filter
