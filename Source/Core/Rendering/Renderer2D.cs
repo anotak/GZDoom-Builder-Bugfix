@@ -924,6 +924,7 @@ namespace CodeImp.DoomBuilder.Rendering
 				// Note: I'm not using Math.Ceiling in this case, because that doesn't work right.
 				gridplotter.DrawGridLineV((int)pos.x, (int)Math.Round(from + 0.49999f), (int)Math.Round(to + 0.49999f), ref c);
 			}
+            Console.WriteLine(6);
 		}
 
 		//mxd
@@ -1669,8 +1670,10 @@ namespace CodeImp.DoomBuilder.Rendering
 		{
 			// Update labels
 			int skipped = 0;
-			foreach(ITextLabel label in labels)
+            int labelCount = labels.Count;
+			for(int i = 0; i < labelCount; i++)
 			{
+                ITextLabel label = labels[i];
 				// Update the text if needed
 				label.Update(translatex, translatey, scale, -scale);
 				if(label.SkipRendering) skipped++;
@@ -1691,11 +1694,12 @@ namespace CodeImp.DoomBuilder.Rendering
 			// Begin drawing
 			graphics.Shaders.Display2D.Begin();
 			graphics.Shaders.Display2D.BeginPass(1);
-
-			foreach(ITextLabel label in labels)
-			{
-				// Text is created?
-				if(!label.SkipRendering)
+            
+            for (int i = 0; i < labelCount; i++)
+            {
+                ITextLabel label = labels[i];
+                // Text is created?
+                if (!label.SkipRendering)
 				{
 					graphics.Shaders.Display2D.Texture1 = label.Texture;
 					graphics.Shaders.Display2D.ApplySettings();
