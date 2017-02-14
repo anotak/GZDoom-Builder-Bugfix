@@ -175,7 +175,7 @@ namespace CodeImp.DoomBuilder.IO
 		{
 			// Create a reader
 			BinaryReader reader = new BinaryReader(stream);
-
+            
 			// Copy bytes over
 			stream.Seek(0, SeekOrigin.Begin);
 			lump.Stream.Write(reader.ReadBytes((int)stream.Length), 0, (int)stream.Length);

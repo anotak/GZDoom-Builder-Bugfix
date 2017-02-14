@@ -103,6 +103,8 @@ namespace CodeImp.DoomBuilder.IO
 		private FileStream file;
 		private BinaryReader reader;
 		private BinaryWriter writer;
+        private long filelength = -1;
+        private long filecapacity = -1;
 		
 		// Header
 		private int numlumps;
@@ -168,6 +170,11 @@ namespace CodeImp.DoomBuilder.IO
 					// Flush writing changes
 					if(writer != null) writer.Flush();
 					if(file != null) file.Flush();
+
+                    if (filecapacity != filelength)
+                    {
+                        file.SetLength(filelength);
+                    }
 				}
 				
 				// Clean up
@@ -404,9 +411,9 @@ namespace CodeImp.DoomBuilder.IO
 			// Write new headers
 			WriteHeaders();
 		}
-		
-		// This flushes writing changes
-		/*public void Flush()
+
+        // This flushes writing changes
+        /*public void Flush()
 		{
 			// Only possible when not read-only
 			if(!isreadonly)
@@ -416,6 +423,43 @@ namespace CodeImp.DoomBuilder.IO
 				if(file != null) file.Flush();
 			}
 		}*/
+        public void ExtendCapacityBy(long addlength)
+        {
+            if (isreadonly)
+            {
+                return;
+            }
+            // Extend the file
+            if (filecapacity < 0 || filelength < 0)
+            {
+                filelength = file.Length;
+                filecapacity = file.Length;
+            }
+            if (filecapacity < filelength + addlength)
+            {
+                filecapacity = filelength + addlength;
+                file.SetLength(filecapacity);
+            }
+        }
+
+        public void ExtendLengthBy(long addlength)
+        {
+            if (isreadonly)
+            {
+                return;
+            }
+            ExtendCapacityBy(addlength);
+            filelength += addlength;
+        }
+
+        public long GetLength()
+        {
+            if (filelength < 0)
+            {
+                filelength = file.Length;
+            }
+            return filelength;
+        }
 		
 		#endregion
 		
@@ -427,9 +471,9 @@ namespace CodeImp.DoomBuilder.IO
 		{
 			// We will be adding a lump
 			numlumps++;
-			
-			// Extend the file
-			file.SetLength(file.Length + datalength + 16);
+
+            // Extend the file
+            ExtendLengthBy(datalength + 16);
 			
 			// Create the lump
 			Lump lump = new Lump(file, this, Lump.MakeFixedName(name, ENCODING), lumpsoffset, datalength);
@@ -445,8 +489,26 @@ namespace CodeImp.DoomBuilder.IO
 			return lump;
 		}
 
-		// This removes a lump from the WAD file by index
-		public void RemoveAt(int index)
+        public Lump Add(string name, int datalength)
+        {
+            // We will be adding a lump
+            numlumps++;
+
+            // Extend the file
+            ExtendLengthBy(datalength + 16);
+
+            // Create the lump
+            Lump lump = new Lump(file, this, Lump.MakeFixedName(name, ENCODING), lumpsoffset, datalength);
+            lumps.Add(lump);
+
+            // Advance lumps table offset
+            lumpsoffset += datalength;
+
+            return lump;
+        }
+
+        // This removes a lump from the WAD file by index
+        public void RemoveAt(int index)
 		{
 			// Remove from list
 			Lump l = lumps[index];

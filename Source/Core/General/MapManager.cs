@@ -956,6 +956,7 @@ namespace CodeImp.DoomBuilder
 
 					// Create new target file
 					targetwad = new WAD(newfilepathname) { IsIWAD = origwad.IsIWAD }; //mxd. Let's preserve wad type
+                    targetwad.ExtendCapacityBy(origwad.GetLength());
 
 					// Copy all lumps, except the original map
 					GameConfiguration origcfg; //mxd
@@ -1467,7 +1468,8 @@ namespace CodeImp.DoomBuilder
 			// Go for all lumps
 			bool skipping = false;
 			int headerpos = REPLACE_TARGET_MAP; //mxd
-			for(int i = 0; i < source.Lumps.Count; i++)
+            int sourceCount = source.Lumps.Count;
+			for(int i = 0; i < sourceCount; i++)
 			{
 				Lump srclump = source.Lumps[i];
 				
@@ -1498,7 +1500,7 @@ namespace CodeImp.DoomBuilder
 				if(!skipping) 
 				{
 					// Copy lump over!
-					Lump tgtlump = target.Insert(srclump.Name, target.Lumps.Count, srclump.Length, false);
+					Lump tgtlump = target.Add(srclump.Name, srclump.Length);
 					srclump.CopyTo(tgtlump);
 				}
 			}

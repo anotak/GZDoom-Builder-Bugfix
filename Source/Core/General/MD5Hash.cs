@@ -7,6 +7,7 @@ namespace CodeImp.DoomBuilder
 	public static class MD5Hash
 	{
 		private static MD5 hasher = MD5.Create();
+        private static StringBuilder hash = new StringBuilder();
 		
 		public static string Get(Stream stream)
 		{
@@ -19,8 +20,9 @@ namespace CodeImp.DoomBuilder
 			// Rewind the stream again...
 			stream.Position = 0;
 
-			// Create a new Stringbuilder to collect the bytes and create a string.
-			StringBuilder hash = new StringBuilder();
+            // Create a new Stringbuilder to collect the bytes and create a string.
+            //StringBuilder hash = new StringBuilder();
+            hash.Length = 0;
 
 			// Loop through each byte of the hashed data and format each one as a hexadecimal string.
 			for(int i = 0; i < data.Length; i++) hash.Append(data[i].ToString("x2"));
