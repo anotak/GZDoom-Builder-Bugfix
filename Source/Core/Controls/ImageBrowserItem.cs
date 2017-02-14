@@ -71,8 +71,8 @@ namespace CodeImp.DoomBuilder.Controls
 			this.tooltip = tooltip; //mxd
             
 			//mxd. Calculate names width
-			this.namewidth = (int)Math.Ceiling(General.Interface.MeasureString(icon.Name, SystemFonts.MessageBoxFont, 10000, StringFormat.GenericTypographic).Width);
-			this.shortnamewidth = (int)Math.Ceiling(General.Interface.MeasureString(icon.ShortName, SystemFonts.MessageBoxFont, 10000, StringFormat.GenericTypographic).Width);
+			this.namewidth = (int)Math.Ceiling(General.Interface.MeasureString(icon.Name, SystemFonts.MessageBoxFont, 10000, StringFormat.GenericTypographic).Width)+6;
+			this.shortnamewidth = (int)Math.Ceiling(General.Interface.MeasureString(icon.ShortName, SystemFonts.MessageBoxFont, 10000, StringFormat.GenericTypographic).Width)+6;
 		}
 
         public static ImageBrowserItem FromImage(ImageData image, string tooltip, bool showfullname)

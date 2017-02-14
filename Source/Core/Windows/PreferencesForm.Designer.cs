@@ -30,57 +30,51 @@ namespace CodeImp.DoomBuilder.Windows
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.GroupBox groupBox1;
             System.Windows.Forms.Label label7;
             System.Windows.Forms.Label label5;
-            System.Windows.Forms.GroupBox groupBox1;
-            System.Windows.Forms.Label label1;
-            System.Windows.Forms.Label label18;
-            System.Windows.Forms.Label label27;
             System.Windows.Forms.Label label29;
+            System.Windows.Forms.Label label27;
+            System.Windows.Forms.Label label18;
+            System.Windows.Forms.Label label1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PreferencesForm));
             this.texturesizesbelow = new System.Windows.Forms.CheckBox();
             this.blackbrowsers = new System.Windows.Forms.CheckBox();
             this.checkforupdates = new System.Windows.Forms.CheckBox();
             this.cbStoreEditTab = new System.Windows.Forms.CheckBox();
             this.locatetexturegroup = new System.Windows.Forms.CheckBox();
-            this.recentFiles = new System.Windows.Forms.TrackBar();
+            this.recentFiles = new CodeImp.DoomBuilder.Controls.TransparentTrackBar();
             this.labelRecentFiles = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.vertexScaleLabel = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.vertexScale = new System.Windows.Forms.TrackBar();
+            this.vertexScale = new CodeImp.DoomBuilder.Controls.TransparentTrackBar();
             this.cbSynchCameras = new System.Windows.Forms.CheckBox();
             this.showtexturesizes = new System.Windows.Forms.CheckBox();
             this.scriptontop = new System.Windows.Forms.CheckBox();
-            this.zoomfactor = new System.Windows.Forms.TrackBar();
+            this.zoomfactor = new CodeImp.DoomBuilder.Controls.TransparentTrackBar();
             this.zoomfactorlabel = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.autoscrollspeed = new System.Windows.Forms.TrackBar();
+            this.autoscrollspeed = new CodeImp.DoomBuilder.Controls.TransparentTrackBar();
             this.autoscrollspeedlabel = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.defaultviewmode = new System.Windows.Forms.ComboBox();
-            this.keyusedlabel = new System.Windows.Forms.Label();
-            this.colorsgroup1 = new System.Windows.Forms.GroupBox();
-            this.colorguidelines = new CodeImp.DoomBuilder.Controls.ColorControl();
-            this.color3dFloors = new CodeImp.DoomBuilder.Controls.ColorControl();
-            this.colorInfo = new CodeImp.DoomBuilder.Controls.ColorControl();
-            this.colorMD3 = new CodeImp.DoomBuilder.Controls.ColorControl();
-            this.colorgrid64 = new CodeImp.DoomBuilder.Controls.ColorControl();
-            this.colorgrid = new CodeImp.DoomBuilder.Controls.ColorControl();
-            this.colorindication = new CodeImp.DoomBuilder.Controls.ColorControl();
-            this.colorbackcolor = new CodeImp.DoomBuilder.Controls.ColorControl();
-            this.colorselection = new CodeImp.DoomBuilder.Controls.ColorControl();
-            this.colorvertices = new CodeImp.DoomBuilder.Controls.ColorControl();
-            this.colorhighlight = new CodeImp.DoomBuilder.Controls.ColorControl();
-            this.colorlinedefs = new CodeImp.DoomBuilder.Controls.ColorControl();
-            this.doublesidedalpha = new System.Windows.Forms.TrackBar();
-            this.label2 = new System.Windows.Forms.Label();
-            this.doublesidedalphalabel = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.resetscreenshotsdir = new System.Windows.Forms.Button();
+            this.browsescreenshotsdir = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.cbMarkExtraFloors = new System.Windows.Forms.CheckBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.cbOldHighlightMode = new System.Windows.Forms.CheckBox();
             this.cbStretchView = new System.Windows.Forms.CheckBox();
-            this.qualitydisplay = new System.Windows.Forms.CheckBox();
-            this.cancel = new System.Windows.Forms.Button();
+            this.scriptautoclosebrackets = new System.Windows.Forms.CheckBox();
+            this.scriptallmanstyle = new System.Windows.Forms.CheckBox();
+            this.browseScreenshotsFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.apply = new System.Windows.Forms.Button();
+            this.cancel = new System.Windows.Forms.Button();
             this.tabs = new System.Windows.Forms.TabControl();
             this.tabinterface = new System.Windows.Forms.TabPage();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
@@ -90,8 +84,6 @@ namespace CodeImp.DoomBuilder.Windows
             this.label33 = new System.Windows.Forms.Label();
             this.textlabelfontsize = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.resetscreenshotsdir = new System.Windows.Forms.Button();
-            this.browsescreenshotsdir = new System.Windows.Forms.Button();
             this.screenshotsfolderpath = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.toolbar_gzdoom = new System.Windows.Forms.CheckBox();
@@ -109,13 +101,12 @@ namespace CodeImp.DoomBuilder.Windows
             this.dockersposition = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.vertexScale3D = new System.Windows.Forms.TrackBar();
+            this.vertexScale3D = new CodeImp.DoomBuilder.Controls.TransparentTrackBar();
             this.vertexScale3DLabel = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.viewdistance = new System.Windows.Forms.TrackBar();
-            this.movespeed = new System.Windows.Forms.TrackBar();
-            this.mousespeed = new System.Windows.Forms.TrackBar();
-            this.fieldofview = new System.Windows.Forms.TrackBar();
+            this.viewdistance = new CodeImp.DoomBuilder.Controls.TransparentTrackBar();
+            this.movespeed = new CodeImp.DoomBuilder.Controls.TransparentTrackBar();
+            this.mousespeed = new CodeImp.DoomBuilder.Controls.TransparentTrackBar();
+            this.fieldofview = new CodeImp.DoomBuilder.Controls.TransparentTrackBar();
             this.viewdistancelabel = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.invertyaxis = new System.Windows.Forms.CheckBox();
@@ -135,6 +126,7 @@ namespace CodeImp.DoomBuilder.Windows
             this.actioncontrolpanel = new System.Windows.Forms.GroupBox();
             this.actiondescription = new System.Windows.Forms.TextBox();
             this.keyusedlist = new System.Windows.Forms.ListBox();
+            this.keyusedlabel = new System.Windows.Forms.Label();
             this.disregardshiftlabel = new System.Windows.Forms.Label();
             this.actioncontrol = new System.Windows.Forms.ComboBox();
             this.actiontitle = new System.Windows.Forms.Label();
@@ -143,36 +135,46 @@ namespace CodeImp.DoomBuilder.Windows
             this.tabcolors = new System.Windows.Forms.TabPage();
             this.appearancegroup1 = new System.Windows.Forms.GroupBox();
             this.activethingsalphalabel = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.cbMarkExtraFloors = new System.Windows.Forms.CheckBox();
-            this.activethingsalpha = new System.Windows.Forms.TrackBar();
+            this.activethingsalpha = new CodeImp.DoomBuilder.Controls.TransparentTrackBar();
             this.hiddenthingsalphalabel = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
             this.inactivethingsalphalabel = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
             this.labelantialiasing = new System.Windows.Forms.Label();
-            this.antialiasing = new System.Windows.Forms.TrackBar();
+            this.antialiasing = new CodeImp.DoomBuilder.Controls.TransparentTrackBar();
             this.labelanisotropicfiltering = new System.Windows.Forms.Label();
-            this.anisotropicfiltering = new System.Windows.Forms.TrackBar();
-            this.cbOldHighlightMode = new System.Windows.Forms.CheckBox();
+            this.anisotropicfiltering = new CodeImp.DoomBuilder.Controls.TransparentTrackBar();
+            this.doublesidedalphalabel = new System.Windows.Forms.Label();
+            this.qualitydisplay = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.labelDynLightCount = new System.Windows.Forms.Label();
-            this.tbDynLightCount = new System.Windows.Forms.TrackBar();
-            this.imagebrightness = new System.Windows.Forms.TrackBar();
+            this.tbDynLightCount = new CodeImp.DoomBuilder.Controls.TransparentTrackBar();
+            this.imagebrightness = new CodeImp.DoomBuilder.Controls.TransparentTrackBar();
             this.animatevisualselection = new System.Windows.Forms.CheckBox();
-            this.hiddenthingsalpha = new System.Windows.Forms.TrackBar();
-            this.inactivethingsalpha = new System.Windows.Forms.TrackBar();
+            this.hiddenthingsalpha = new CodeImp.DoomBuilder.Controls.TransparentTrackBar();
+            this.inactivethingsalpha = new CodeImp.DoomBuilder.Controls.TransparentTrackBar();
+            this.doublesidedalpha = new CodeImp.DoomBuilder.Controls.TransparentTrackBar();
             this.visualbilinear = new System.Windows.Forms.CheckBox();
             this.classicbilinear = new System.Windows.Forms.CheckBox();
             this.imagebrightnesslabel = new System.Windows.Forms.Label();
+            this.colorsgroup1 = new System.Windows.Forms.GroupBox();
+            this.colorguidelines = new CodeImp.DoomBuilder.Controls.ColorControl();
+            this.color3dFloors = new CodeImp.DoomBuilder.Controls.ColorControl();
+            this.colorInfo = new CodeImp.DoomBuilder.Controls.ColorControl();
+            this.colorMD3 = new CodeImp.DoomBuilder.Controls.ColorControl();
+            this.colorgrid64 = new CodeImp.DoomBuilder.Controls.ColorControl();
+            this.colorgrid = new CodeImp.DoomBuilder.Controls.ColorControl();
+            this.colorindication = new CodeImp.DoomBuilder.Controls.ColorControl();
+            this.colorbackcolor = new CodeImp.DoomBuilder.Controls.ColorControl();
+            this.colorselection = new CodeImp.DoomBuilder.Controls.ColorControl();
+            this.colorvertices = new CodeImp.DoomBuilder.Controls.ColorControl();
+            this.colorhighlight = new CodeImp.DoomBuilder.Controls.ColorControl();
+            this.colorlinedefs = new CodeImp.DoomBuilder.Controls.ColorControl();
             this.tabscripteditor = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.scriptshowfolding = new System.Windows.Forms.CheckBox();
             this.scriptshowlinenumbers = new System.Windows.Forms.CheckBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.scriptautoshowautocompletion = new System.Windows.Forms.CheckBox();
-            this.scriptautoclosebrackets = new System.Windows.Forms.CheckBox();
             this.scriptusetabs = new System.Windows.Forms.CheckBox();
-            this.scriptallmanstyle = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.scriptautoindent = new System.Windows.Forms.CheckBox();
             this.scripttabwidth = new CodeImp.DoomBuilder.Controls.ButtonsNumericTextbox();
@@ -208,22 +210,18 @@ namespace CodeImp.DoomBuilder.Windows
             this.tabpasting = new System.Windows.Forms.TabPage();
             this.label16 = new System.Windows.Forms.Label();
             this.pasteoptions = new CodeImp.DoomBuilder.Controls.PasteOptionsControl();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.browseScreenshotsFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
+            groupBox1 = new System.Windows.Forms.GroupBox();
             label7 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
-            groupBox1 = new System.Windows.Forms.GroupBox();
-            label1 = new System.Windows.Forms.Label();
-            label18 = new System.Windows.Forms.Label();
-            label27 = new System.Windows.Forms.Label();
             label29 = new System.Windows.Forms.Label();
+            label27 = new System.Windows.Forms.Label();
+            label18 = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.recentFiles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vertexScale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zoomfactor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoscrollspeed)).BeginInit();
-            this.colorsgroup1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.doublesidedalpha)).BeginInit();
             this.tabs.SuspendLayout();
             this.tabinterface.SuspendLayout();
             this.groupBox11.SuspendLayout();
@@ -247,6 +245,8 @@ namespace CodeImp.DoomBuilder.Windows
             ((System.ComponentModel.ISupportInitialize)(this.imagebrightness)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hiddenthingsalpha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inactivethingsalpha)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doublesidedalpha)).BeginInit();
+            this.colorsgroup1.SuspendLayout();
             this.tabscripteditor.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -255,24 +255,6 @@ namespace CodeImp.DoomBuilder.Windows
             this.previewgroup.SuspendLayout();
             this.tabpasting.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(20, 172);
-            label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(182, 13);
-            label7.TabIndex = 7;
-            label7.Text = "Or select a special input control here:";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(20, 122);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(195, 13);
-            label5.TabIndex = 4;
-            label5.Text = "Press the desired key combination here:";
             // 
             // groupBox1
             // 
@@ -359,13 +341,13 @@ namespace CodeImp.DoomBuilder.Windows
             // 
             // recentFiles
             // 
-            this.recentFiles.BackColor = System.Drawing.SystemColors.Window;
+            this.recentFiles.BackColor = System.Drawing.Color.Transparent;
             this.recentFiles.LargeChange = 1;
             this.recentFiles.Location = new System.Drawing.Point(127, 156);
             this.recentFiles.Maximum = 25;
             this.recentFiles.Minimum = 8;
             this.recentFiles.Name = "recentFiles";
-            this.recentFiles.Size = new System.Drawing.Size(116, 42);
+            this.recentFiles.Size = new System.Drawing.Size(116, 45);
             this.recentFiles.TabIndex = 5;
             this.recentFiles.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
             this.recentFiles.Value = 8;
@@ -411,12 +393,12 @@ namespace CodeImp.DoomBuilder.Windows
             // 
             // vertexScale
             // 
-            this.vertexScale.BackColor = System.Drawing.SystemColors.Window;
+            this.vertexScale.BackColor = System.Drawing.Color.Transparent;
             this.vertexScale.LargeChange = 1;
             this.vertexScale.Location = new System.Drawing.Point(127, 119);
             this.vertexScale.Minimum = 1;
             this.vertexScale.Name = "vertexScale";
-            this.vertexScale.Size = new System.Drawing.Size(116, 42);
+            this.vertexScale.Size = new System.Drawing.Size(116, 45);
             this.vertexScale.TabIndex = 4;
             this.vertexScale.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
             this.vertexScale.Value = 1;
@@ -454,12 +436,12 @@ namespace CodeImp.DoomBuilder.Windows
             // 
             // zoomfactor
             // 
-            this.zoomfactor.BackColor = System.Drawing.SystemColors.Window;
+            this.zoomfactor.BackColor = System.Drawing.Color.Transparent;
             this.zoomfactor.LargeChange = 1;
             this.zoomfactor.Location = new System.Drawing.Point(127, 82);
             this.zoomfactor.Minimum = 1;
             this.zoomfactor.Name = "zoomfactor";
-            this.zoomfactor.Size = new System.Drawing.Size(116, 42);
+            this.zoomfactor.Size = new System.Drawing.Size(116, 45);
             this.zoomfactor.TabIndex = 3;
             this.zoomfactor.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
             this.zoomfactor.Value = 3;
@@ -485,12 +467,12 @@ namespace CodeImp.DoomBuilder.Windows
             // 
             // autoscrollspeed
             // 
-            this.autoscrollspeed.BackColor = System.Drawing.SystemColors.Window;
+            this.autoscrollspeed.BackColor = System.Drawing.Color.Transparent;
             this.autoscrollspeed.LargeChange = 1;
             this.autoscrollspeed.Location = new System.Drawing.Point(127, 45);
             this.autoscrollspeed.Maximum = 5;
             this.autoscrollspeed.Name = "autoscrollspeed";
-            this.autoscrollspeed.Size = new System.Drawing.Size(116, 42);
+            this.autoscrollspeed.Size = new System.Drawing.Size(116, 45);
             this.autoscrollspeed.TabIndex = 2;
             this.autoscrollspeed.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
             this.autoscrollspeed.ValueChanged += new System.EventHandler(this.autoscrollspeed_ValueChanged);
@@ -536,15 +518,43 @@ namespace CodeImp.DoomBuilder.Windows
             this.defaultviewmode.Size = new System.Drawing.Size(145, 21);
             this.defaultviewmode.TabIndex = 0;
             // 
-            // label1
+            // label7
             // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(44, 203);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(145, 13);
-            label1.TabIndex = 20;
-            label1.Text = "Textures and flats brightness:";
-            label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            label7.AutoSize = true;
+            label7.Location = new System.Drawing.Point(20, 172);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(182, 13);
+            label7.TabIndex = 7;
+            label7.Text = "Or select a special input control here:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(20, 122);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(195, 13);
+            label5.TabIndex = 4;
+            label5.Text = "Press the desired key combination here:";
+            // 
+            // label29
+            // 
+            label29.AutoSize = true;
+            label29.Location = new System.Drawing.Point(95, 338);
+            label29.Name = "label29";
+            label29.Size = new System.Drawing.Size(93, 13);
+            label29.TabIndex = 38;
+            label29.Text = "Edge anti-aliasing:";
+            label29.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label27
+            // 
+            label27.AutoSize = true;
+            label27.Location = new System.Drawing.Point(90, 293);
+            label27.Name = "label27";
+            label27.Size = new System.Drawing.Size(98, 13);
+            label27.TabIndex = 35;
+            label27.Text = "Anisotropic filtering:";
+            label27.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label18
             // 
@@ -558,221 +568,104 @@ namespace CodeImp.DoomBuilder.Windows
             this.toolTip1.SetToolTip(label18, "Controls how many dynamic lights could be \r\nrendered simultaneously in Visual mod" +
         "e ");
             // 
-            // label27
+            // label1
             // 
-            label27.AutoSize = true;
-            label27.Location = new System.Drawing.Point(90, 293);
-            label27.Name = "label27";
-            label27.Size = new System.Drawing.Size(98, 13);
-            label27.TabIndex = 35;
-            label27.Text = "Anisotropic filtering:";
-            label27.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(44, 203);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(145, 13);
+            label1.TabIndex = 20;
+            label1.Text = "Textures and flats brightness:";
+            label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label29
+            // resetscreenshotsdir
             // 
-            label29.AutoSize = true;
-            label29.Location = new System.Drawing.Point(95, 338);
-            label29.Name = "label29";
-            label29.Size = new System.Drawing.Size(93, 13);
-            label29.TabIndex = 38;
-            label29.Text = "Edge anti-aliasing:";
-            label29.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.resetscreenshotsdir.Image = global::CodeImp.DoomBuilder.Properties.Resources.Reset;
+            this.resetscreenshotsdir.Location = new System.Drawing.Point(301, 17);
+            this.resetscreenshotsdir.Name = "resetscreenshotsdir";
+            this.resetscreenshotsdir.Size = new System.Drawing.Size(24, 24);
+            this.resetscreenshotsdir.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.resetscreenshotsdir, "Use Default Screenshots Folder");
+            this.resetscreenshotsdir.UseVisualStyleBackColor = true;
+            this.resetscreenshotsdir.Click += new System.EventHandler(this.resetscreenshotsdir_Click);
             // 
-            // keyusedlabel
+            // browsescreenshotsdir
             // 
-            this.keyusedlabel.AutoSize = true;
-            this.keyusedlabel.Location = new System.Drawing.Point(20, 287);
-            this.keyusedlabel.Name = "keyusedlabel";
-            this.keyusedlabel.Size = new System.Drawing.Size(216, 13);
-            this.keyusedlabel.TabIndex = 10;
-            this.keyusedlabel.Text = "Key combination also used by these actions:";
-            this.keyusedlabel.Visible = false;
+            this.browsescreenshotsdir.Image = global::CodeImp.DoomBuilder.Properties.Resources.FolderExplore;
+            this.browsescreenshotsdir.Location = new System.Drawing.Point(275, 17);
+            this.browsescreenshotsdir.Name = "browsescreenshotsdir";
+            this.browsescreenshotsdir.Size = new System.Drawing.Size(24, 24);
+            this.browsescreenshotsdir.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.browsescreenshotsdir, "Browse Screenshots Folder");
+            this.browsescreenshotsdir.UseVisualStyleBackColor = true;
+            this.browsescreenshotsdir.Click += new System.EventHandler(this.browsescreenshotsdir_Click);
             // 
-            // colorsgroup1
+            // label26
             // 
-            this.colorsgroup1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.colorsgroup1.Controls.Add(this.colorguidelines);
-            this.colorsgroup1.Controls.Add(this.color3dFloors);
-            this.colorsgroup1.Controls.Add(this.colorInfo);
-            this.colorsgroup1.Controls.Add(this.colorMD3);
-            this.colorsgroup1.Controls.Add(this.colorgrid64);
-            this.colorsgroup1.Controls.Add(this.colorgrid);
-            this.colorsgroup1.Controls.Add(this.colorindication);
-            this.colorsgroup1.Controls.Add(this.colorbackcolor);
-            this.colorsgroup1.Controls.Add(this.colorselection);
-            this.colorsgroup1.Controls.Add(this.colorvertices);
-            this.colorsgroup1.Controls.Add(this.colorhighlight);
-            this.colorsgroup1.Controls.Add(this.colorlinedefs);
-            this.colorsgroup1.Location = new System.Drawing.Point(8, 8);
-            this.colorsgroup1.Name = "colorsgroup1";
-            this.colorsgroup1.Size = new System.Drawing.Size(203, 493);
-            this.colorsgroup1.TabIndex = 0;
-            this.colorsgroup1.TabStop = false;
-            this.colorsgroup1.Text = " Colors ";
-            this.colorsgroup1.Visible = false;
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(16, 145);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(91, 13);
+            this.label26.TabIndex = 32;
+            this.label26.Text = "Vertex scale (3D):";
+            this.toolTip1.SetToolTip(this.label26, "Sets the size of vertex handles\r\nin 3D mode");
             // 
-            // colorguidelines
+            // label31
             // 
-            this.colorguidelines.BackColor = System.Drawing.Color.Transparent;
-            this.colorguidelines.Label = "Guidelines:";
-            this.colorguidelines.Location = new System.Drawing.Point(15, 307);
-            this.colorguidelines.MaximumSize = new System.Drawing.Size(10000, 23);
-            this.colorguidelines.MinimumSize = new System.Drawing.Size(100, 23);
-            this.colorguidelines.Name = "colorguidelines";
-            this.colorguidelines.Size = new System.Drawing.Size(168, 23);
-            this.colorguidelines.TabIndex = 11;
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(12, 68);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(176, 13);
+            this.label31.TabIndex = 47;
+            this.label31.Text = "Things transparency (Things mode):";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.toolTip1.SetToolTip(this.label31, "Sets Things transparency in all classic\r\nmodes except Things mode");
             // 
-            // color3dFloors
+            // cbMarkExtraFloors
             // 
-            this.color3dFloors.BackColor = System.Drawing.Color.Transparent;
-            this.color3dFloors.Label = "3D Floors:";
-            this.color3dFloors.Location = new System.Drawing.Point(15, 336);
-            this.color3dFloors.MaximumSize = new System.Drawing.Size(10000, 23);
-            this.color3dFloors.MinimumSize = new System.Drawing.Size(100, 23);
-            this.color3dFloors.Name = "color3dFloors";
-            this.color3dFloors.Size = new System.Drawing.Size(168, 23);
-            this.color3dFloors.TabIndex = 10;
+            this.cbMarkExtraFloors.AutoSize = true;
+            this.cbMarkExtraFloors.Location = new System.Drawing.Point(18, 466);
+            this.cbMarkExtraFloors.Name = "cbMarkExtraFloors";
+            this.cbMarkExtraFloors.Size = new System.Drawing.Size(175, 17);
+            this.cbMarkExtraFloors.TabIndex = 1;
+            this.cbMarkExtraFloors.Text = "Mark 3D floors in classic modes";
+            this.toolTip1.SetToolTip(this.cbMarkExtraFloors, "When enabled, linedefs of sectors with 3d floors will be marked using \"3D Floors\"" +
+        " color.");
+            this.cbMarkExtraFloors.UseVisualStyleBackColor = true;
             // 
-            // colorInfo
+            // label32
             // 
-            this.colorInfo.BackColor = System.Drawing.Color.Transparent;
-            this.colorInfo.Label = "Event lines:";
-            this.colorInfo.Location = new System.Drawing.Point(15, 278);
-            this.colorInfo.MaximumSize = new System.Drawing.Size(10000, 23);
-            this.colorInfo.MinimumSize = new System.Drawing.Size(100, 23);
-            this.colorInfo.Name = "colorInfo";
-            this.colorInfo.Size = new System.Drawing.Size(168, 23);
-            this.colorInfo.TabIndex = 9;
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(49, 158);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(139, 13);
+            this.label32.TabIndex = 44;
+            this.label32.Text = "Hidden things transparency:";
+            this.label32.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.toolTip1.SetToolTip(this.label32, "Sets transparency of things hidden \r\nby Things Filter in Things mode");
             // 
-            // colorMD3
+            // label30
             // 
-            this.colorMD3.BackColor = System.Drawing.Color.Transparent;
-            this.colorMD3.Label = "Model wireframe:";
-            this.colorMD3.Location = new System.Drawing.Point(15, 249);
-            this.colorMD3.MaximumSize = new System.Drawing.Size(10000, 23);
-            this.colorMD3.MinimumSize = new System.Drawing.Size(100, 23);
-            this.colorMD3.Name = "colorMD3";
-            this.colorMD3.Size = new System.Drawing.Size(168, 23);
-            this.colorMD3.TabIndex = 8;
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(15, 113);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(173, 13);
+            this.label30.TabIndex = 41;
+            this.label30.Text = "Things transparency (other modes):";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.toolTip1.SetToolTip(this.label30, "Sets Things transparency in all classic\r\nmodes except Things mode");
             // 
-            // colorgrid64
+            // cbOldHighlightMode
             // 
-            this.colorgrid64.BackColor = System.Drawing.Color.Transparent;
-            this.colorgrid64.Label = "64 Block grid:";
-            this.colorgrid64.Location = new System.Drawing.Point(15, 220);
-            this.colorgrid64.MaximumSize = new System.Drawing.Size(10000, 23);
-            this.colorgrid64.MinimumSize = new System.Drawing.Size(100, 23);
-            this.colorgrid64.Name = "colorgrid64";
-            this.colorgrid64.Size = new System.Drawing.Size(168, 23);
-            this.colorgrid64.TabIndex = 7;
-            // 
-            // colorgrid
-            // 
-            this.colorgrid.BackColor = System.Drawing.Color.Transparent;
-            this.colorgrid.Label = "Custom grid:";
-            this.colorgrid.Location = new System.Drawing.Point(15, 191);
-            this.colorgrid.MaximumSize = new System.Drawing.Size(10000, 23);
-            this.colorgrid.MinimumSize = new System.Drawing.Size(100, 23);
-            this.colorgrid.Name = "colorgrid";
-            this.colorgrid.Size = new System.Drawing.Size(168, 23);
-            this.colorgrid.TabIndex = 6;
-            // 
-            // colorindication
-            // 
-            this.colorindication.BackColor = System.Drawing.Color.Transparent;
-            this.colorindication.Label = "Indications:";
-            this.colorindication.Location = new System.Drawing.Point(15, 162);
-            this.colorindication.MaximumSize = new System.Drawing.Size(10000, 23);
-            this.colorindication.MinimumSize = new System.Drawing.Size(100, 23);
-            this.colorindication.Name = "colorindication";
-            this.colorindication.Size = new System.Drawing.Size(168, 23);
-            this.colorindication.TabIndex = 5;
-            // 
-            // colorbackcolor
-            // 
-            this.colorbackcolor.BackColor = System.Drawing.Color.Transparent;
-            this.colorbackcolor.Label = "Background:";
-            this.colorbackcolor.Location = new System.Drawing.Point(15, 17);
-            this.colorbackcolor.MaximumSize = new System.Drawing.Size(10000, 23);
-            this.colorbackcolor.MinimumSize = new System.Drawing.Size(100, 23);
-            this.colorbackcolor.Name = "colorbackcolor";
-            this.colorbackcolor.Size = new System.Drawing.Size(168, 23);
-            this.colorbackcolor.TabIndex = 0;
-            // 
-            // colorselection
-            // 
-            this.colorselection.BackColor = System.Drawing.Color.Transparent;
-            this.colorselection.Label = "Selection:";
-            this.colorselection.Location = new System.Drawing.Point(15, 133);
-            this.colorselection.MaximumSize = new System.Drawing.Size(10000, 23);
-            this.colorselection.MinimumSize = new System.Drawing.Size(100, 23);
-            this.colorselection.Name = "colorselection";
-            this.colorselection.Size = new System.Drawing.Size(168, 23);
-            this.colorselection.TabIndex = 4;
-            // 
-            // colorvertices
-            // 
-            this.colorvertices.BackColor = System.Drawing.Color.Transparent;
-            this.colorvertices.Label = "Vertices:";
-            this.colorvertices.Location = new System.Drawing.Point(15, 46);
-            this.colorvertices.MaximumSize = new System.Drawing.Size(10000, 23);
-            this.colorvertices.MinimumSize = new System.Drawing.Size(100, 23);
-            this.colorvertices.Name = "colorvertices";
-            this.colorvertices.Size = new System.Drawing.Size(168, 23);
-            this.colorvertices.TabIndex = 1;
-            // 
-            // colorhighlight
-            // 
-            this.colorhighlight.BackColor = System.Drawing.Color.Transparent;
-            this.colorhighlight.Label = "Highlight:";
-            this.colorhighlight.Location = new System.Drawing.Point(15, 104);
-            this.colorhighlight.MaximumSize = new System.Drawing.Size(10000, 23);
-            this.colorhighlight.MinimumSize = new System.Drawing.Size(100, 23);
-            this.colorhighlight.Name = "colorhighlight";
-            this.colorhighlight.Size = new System.Drawing.Size(168, 23);
-            this.colorhighlight.TabIndex = 3;
-            // 
-            // colorlinedefs
-            // 
-            this.colorlinedefs.BackColor = System.Drawing.Color.Transparent;
-            this.colorlinedefs.Label = "Common lines:";
-            this.colorlinedefs.Location = new System.Drawing.Point(15, 75);
-            this.colorlinedefs.MaximumSize = new System.Drawing.Size(10000, 23);
-            this.colorlinedefs.MinimumSize = new System.Drawing.Size(100, 23);
-            this.colorlinedefs.Name = "colorlinedefs";
-            this.colorlinedefs.Size = new System.Drawing.Size(168, 23);
-            this.colorlinedefs.TabIndex = 2;
-            // 
-            // doublesidedalpha
-            // 
-            this.doublesidedalpha.BackColor = System.Drawing.SystemColors.Window;
-            this.doublesidedalpha.LargeChange = 3;
-            this.doublesidedalpha.Location = new System.Drawing.Point(199, 12);
-            this.doublesidedalpha.Name = "doublesidedalpha";
-            this.doublesidedalpha.Size = new System.Drawing.Size(154, 42);
-            this.doublesidedalpha.TabIndex = 0;
-            this.doublesidedalpha.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
-            this.doublesidedalpha.ValueChanged += new System.EventHandler(this.doublesidedalpha_ValueChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(47, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 13);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Passable lines transparency:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // doublesidedalphalabel
-            // 
-            this.doublesidedalphalabel.AutoSize = true;
-            this.doublesidedalphalabel.Location = new System.Drawing.Point(359, 23);
-            this.doublesidedalphalabel.Name = "doublesidedalphalabel";
-            this.doublesidedalphalabel.Size = new System.Drawing.Size(21, 13);
-            this.doublesidedalphalabel.TabIndex = 16;
-            this.doublesidedalphalabel.Text = "0%";
+            this.cbOldHighlightMode.AutoSize = true;
+            this.cbOldHighlightMode.Location = new System.Drawing.Point(229, 443);
+            this.cbOldHighlightMode.Name = "cbOldHighlightMode";
+            this.cbOldHighlightMode.Size = new System.Drawing.Size(207, 17);
+            this.cbOldHighlightMode.TabIndex = 15;
+            this.cbOldHighlightMode.Text = "Always show selection in visual modes";
+            this.toolTip1.SetToolTip(this.cbOldHighlightMode, "If enabled, selected surfaces will be highlighted in Visual mode\r\neven if \"Show h" +
+        "ighlight\" mode is disabled \r\n(Doom Builder 2 behaviour).");
+            this.cbOldHighlightMode.UseVisualStyleBackColor = true;
             // 
             // cbStretchView
             // 
@@ -786,38 +679,55 @@ namespace CodeImp.DoomBuilder.Windows
         "g\r\nvertical scale of the world geometry and \r\nsprites by 15%.\r\n");
             this.cbStretchView.UseVisualStyleBackColor = true;
             // 
-            // qualitydisplay
+            // scriptautoclosebrackets
             // 
-            this.qualitydisplay.AutoSize = true;
-            this.qualitydisplay.Location = new System.Drawing.Point(18, 397);
-            this.qualitydisplay.Name = "qualitydisplay";
-            this.qualitydisplay.Size = new System.Drawing.Size(128, 17);
-            this.qualitydisplay.TabIndex = 10;
-            this.qualitydisplay.Text = "High quality rendering";
-            this.qualitydisplay.UseVisualStyleBackColor = true;
+            this.scriptautoclosebrackets.AutoSize = true;
+            this.scriptautoclosebrackets.Location = new System.Drawing.Point(19, 72);
+            this.scriptautoclosebrackets.Name = "scriptautoclosebrackets";
+            this.scriptautoclosebrackets.Size = new System.Drawing.Size(120, 17);
+            this.scriptautoclosebrackets.TabIndex = 3;
+            this.scriptautoclosebrackets.Text = "Auto-close brackets";
+            this.toolTip1.SetToolTip(this.scriptautoclosebrackets, "When enabled, the editor will automatically\r\ninsert closing bracket if opening br" +
+        "acket was typed.");
+            this.scriptautoclosebrackets.UseVisualStyleBackColor = true;
             // 
-            // cancel
+            // scriptallmanstyle
             // 
-            this.cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancel.Location = new System.Drawing.Point(587, 557);
-            this.cancel.Name = "cancel";
-            this.cancel.Size = new System.Drawing.Size(112, 25);
-            this.cancel.TabIndex = 1;
-            this.cancel.Text = "Cancel";
-            this.cancel.UseVisualStyleBackColor = true;
-            this.cancel.Click += new System.EventHandler(this.cancel_Click);
+            this.scriptallmanstyle.AutoSize = true;
+            this.scriptallmanstyle.Location = new System.Drawing.Point(19, 95);
+            this.scriptallmanstyle.Name = "scriptallmanstyle";
+            this.scriptallmanstyle.Size = new System.Drawing.Size(119, 17);
+            this.scriptallmanstyle.TabIndex = 4;
+            this.scriptallmanstyle.Text = "Allman-style bracing";
+            this.toolTip1.SetToolTip(this.scriptallmanstyle, resources.GetString("scriptallmanstyle.ToolTip"));
+            this.scriptallmanstyle.UseVisualStyleBackColor = true;
+            // 
+            // browseScreenshotsFolderDialog
+            // 
+            this.browseScreenshotsFolderDialog.Description = "Select a Folder to Save Screenshots Into";
             // 
             // apply
             // 
             this.apply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.apply.Location = new System.Drawing.Point(469, 557);
+            this.apply.Location = new System.Drawing.Point(449, 531);
             this.apply.Name = "apply";
             this.apply.Size = new System.Drawing.Size(112, 25);
             this.apply.TabIndex = 0;
             this.apply.Text = "OK";
             this.apply.UseVisualStyleBackColor = true;
             this.apply.Click += new System.EventHandler(this.apply_Click);
+            // 
+            // cancel
+            // 
+            this.cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancel.Location = new System.Drawing.Point(567, 531);
+            this.cancel.Name = "cancel";
+            this.cancel.Size = new System.Drawing.Size(112, 25);
+            this.cancel.TabIndex = 1;
+            this.cancel.Text = "Cancel";
+            this.cancel.UseVisualStyleBackColor = true;
+            this.cancel.Click += new System.EventHandler(this.cancel_Click);
             // 
             // tabs
             // 
@@ -834,7 +744,7 @@ namespace CodeImp.DoomBuilder.Windows
             this.tabs.Name = "tabs";
             this.tabs.Padding = new System.Drawing.Point(24, 3);
             this.tabs.SelectedIndex = 0;
-            this.tabs.Size = new System.Drawing.Size(690, 536);
+            this.tabs.Size = new System.Drawing.Size(670, 510);
             this.tabs.TabIndex = 0;
             this.tabs.SelectedIndexChanged += new System.EventHandler(this.tabs_SelectedIndexChanged);
             // 
@@ -850,7 +760,7 @@ namespace CodeImp.DoomBuilder.Windows
             this.tabinterface.Location = new System.Drawing.Point(4, 22);
             this.tabinterface.Name = "tabinterface";
             this.tabinterface.Padding = new System.Windows.Forms.Padding(5);
-            this.tabinterface.Size = new System.Drawing.Size(682, 510);
+            this.tabinterface.Size = new System.Drawing.Size(662, 484);
             this.tabinterface.TabIndex = 0;
             this.tabinterface.Text = "Interface";
             this.tabinterface.UseVisualStyleBackColor = true;
@@ -944,28 +854,6 @@ namespace CodeImp.DoomBuilder.Windows
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = " Screenshots Folder ";
-            // 
-            // resetscreenshotsdir
-            // 
-            this.resetscreenshotsdir.Image = global::CodeImp.DoomBuilder.Properties.Resources.Reset;
-            this.resetscreenshotsdir.Location = new System.Drawing.Point(301, 17);
-            this.resetscreenshotsdir.Name = "resetscreenshotsdir";
-            this.resetscreenshotsdir.Size = new System.Drawing.Size(24, 24);
-            this.resetscreenshotsdir.TabIndex = 2;
-            this.toolTip1.SetToolTip(this.resetscreenshotsdir, "Use Default Screenshots Folder");
-            this.resetscreenshotsdir.UseVisualStyleBackColor = true;
-            this.resetscreenshotsdir.Click += new System.EventHandler(this.resetscreenshotsdir_Click);
-            // 
-            // browsescreenshotsdir
-            // 
-            this.browsescreenshotsdir.Image = global::CodeImp.DoomBuilder.Properties.Resources.FolderExplore;
-            this.browsescreenshotsdir.Location = new System.Drawing.Point(275, 17);
-            this.browsescreenshotsdir.Name = "browsescreenshotsdir";
-            this.browsescreenshotsdir.Size = new System.Drawing.Size(24, 24);
-            this.browsescreenshotsdir.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.browsescreenshotsdir, "Browse Screenshots Folder");
-            this.browsescreenshotsdir.UseVisualStyleBackColor = true;
-            this.browsescreenshotsdir.Click += new System.EventHandler(this.browsescreenshotsdir_Click);
             // 
             // screenshotsfolderpath
             // 
@@ -1164,13 +1052,13 @@ namespace CodeImp.DoomBuilder.Windows
             // 
             // vertexScale3D
             // 
-            this.vertexScale3D.BackColor = System.Drawing.SystemColors.Window;
+            this.vertexScale3D.BackColor = System.Drawing.Color.Transparent;
             this.vertexScale3D.LargeChange = 1;
             this.vertexScale3D.Location = new System.Drawing.Point(116, 133);
             this.vertexScale3D.Maximum = 15;
             this.vertexScale3D.Minimum = 2;
             this.vertexScale3D.Name = "vertexScale3D";
-            this.vertexScale3D.Size = new System.Drawing.Size(150, 42);
+            this.vertexScale3D.Size = new System.Drawing.Size(150, 45);
             this.vertexScale3D.TabIndex = 3;
             this.vertexScale3D.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
             this.vertexScale3D.Value = 10;
@@ -1185,25 +1073,15 @@ namespace CodeImp.DoomBuilder.Windows
             this.vertexScale3DLabel.TabIndex = 33;
             this.vertexScale3DLabel.Text = "100%";
             // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(16, 145);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(91, 13);
-            this.label26.TabIndex = 32;
-            this.label26.Text = "Vertex scale (3D):";
-            this.toolTip1.SetToolTip(this.label26, "Sets the size of vertex handles\r\nin 3D mode");
-            // 
             // viewdistance
             // 
-            this.viewdistance.BackColor = System.Drawing.SystemColors.Window;
+            this.viewdistance.BackColor = System.Drawing.Color.Transparent;
             this.viewdistance.LargeChange = 2;
             this.viewdistance.Location = new System.Drawing.Point(116, 169);
             this.viewdistance.Maximum = 45;
             this.viewdistance.Minimum = 1;
             this.viewdistance.Name = "viewdistance";
-            this.viewdistance.Size = new System.Drawing.Size(150, 42);
+            this.viewdistance.Size = new System.Drawing.Size(150, 45);
             this.viewdistance.TabIndex = 4;
             this.viewdistance.TickFrequency = 2;
             this.viewdistance.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
@@ -1212,12 +1090,12 @@ namespace CodeImp.DoomBuilder.Windows
             // 
             // movespeed
             // 
-            this.movespeed.BackColor = System.Drawing.SystemColors.Window;
+            this.movespeed.BackColor = System.Drawing.Color.Transparent;
             this.movespeed.Location = new System.Drawing.Point(116, 96);
             this.movespeed.Maximum = 20;
             this.movespeed.Minimum = 1;
             this.movespeed.Name = "movespeed";
-            this.movespeed.Size = new System.Drawing.Size(150, 42);
+            this.movespeed.Size = new System.Drawing.Size(150, 45);
             this.movespeed.TabIndex = 2;
             this.movespeed.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
             this.movespeed.Value = 1;
@@ -1225,12 +1103,12 @@ namespace CodeImp.DoomBuilder.Windows
             // 
             // mousespeed
             // 
-            this.mousespeed.BackColor = System.Drawing.SystemColors.Window;
+            this.mousespeed.BackColor = System.Drawing.Color.Transparent;
             this.mousespeed.Location = new System.Drawing.Point(116, 57);
             this.mousespeed.Maximum = 20;
             this.mousespeed.Minimum = 1;
             this.mousespeed.Name = "mousespeed";
-            this.mousespeed.Size = new System.Drawing.Size(150, 42);
+            this.mousespeed.Size = new System.Drawing.Size(150, 45);
             this.mousespeed.TabIndex = 1;
             this.mousespeed.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
             this.mousespeed.Value = 1;
@@ -1238,13 +1116,13 @@ namespace CodeImp.DoomBuilder.Windows
             // 
             // fieldofview
             // 
-            this.fieldofview.BackColor = System.Drawing.SystemColors.Window;
+            this.fieldofview.BackColor = System.Drawing.Color.Transparent;
             this.fieldofview.LargeChange = 1;
             this.fieldofview.Location = new System.Drawing.Point(116, 20);
             this.fieldofview.Maximum = 17;
             this.fieldofview.Minimum = 5;
             this.fieldofview.Name = "fieldofview";
-            this.fieldofview.Size = new System.Drawing.Size(150, 42);
+            this.fieldofview.Size = new System.Drawing.Size(150, 45);
             this.fieldofview.TabIndex = 0;
             this.fieldofview.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
             this.fieldofview.Value = 5;
@@ -1344,7 +1222,7 @@ namespace CodeImp.DoomBuilder.Windows
             this.tabkeys.Location = new System.Drawing.Point(4, 22);
             this.tabkeys.Name = "tabkeys";
             this.tabkeys.Padding = new System.Windows.Forms.Padding(3);
-            this.tabkeys.Size = new System.Drawing.Size(682, 510);
+            this.tabkeys.Size = new System.Drawing.Size(662, 484);
             this.tabkeys.TabIndex = 1;
             this.tabkeys.Text = "Controls";
             this.tabkeys.UseVisualStyleBackColor = true;
@@ -1460,6 +1338,16 @@ namespace CodeImp.DoomBuilder.Windows
             this.keyusedlist.TabIndex = 11;
             this.keyusedlist.Visible = false;
             // 
+            // keyusedlabel
+            // 
+            this.keyusedlabel.AutoSize = true;
+            this.keyusedlabel.Location = new System.Drawing.Point(20, 287);
+            this.keyusedlabel.Name = "keyusedlabel";
+            this.keyusedlabel.Size = new System.Drawing.Size(216, 13);
+            this.keyusedlabel.TabIndex = 10;
+            this.keyusedlabel.Text = "Key combination also used by these actions:";
+            this.keyusedlabel.Visible = false;
+            // 
             // disregardshiftlabel
             // 
             this.disregardshiftlabel.Location = new System.Drawing.Point(20, 224);
@@ -1524,7 +1412,7 @@ namespace CodeImp.DoomBuilder.Windows
             this.tabcolors.Location = new System.Drawing.Point(4, 22);
             this.tabcolors.Name = "tabcolors";
             this.tabcolors.Padding = new System.Windows.Forms.Padding(5);
-            this.tabcolors.Size = new System.Drawing.Size(682, 510);
+            this.tabcolors.Size = new System.Drawing.Size(662, 484);
             this.tabcolors.TabIndex = 2;
             this.tabcolors.Text = "Appearance";
             this.tabcolors.UseVisualStyleBackColor = true;
@@ -1581,36 +1469,13 @@ namespace CodeImp.DoomBuilder.Windows
             this.activethingsalphalabel.TabIndex = 48;
             this.activethingsalphalabel.Text = "0%";
             // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(12, 68);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(176, 13);
-            this.label31.TabIndex = 47;
-            this.label31.Text = "Things transparency (Things mode):";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.toolTip1.SetToolTip(this.label31, "Sets Things transparency in all classic\r\nmodes except Things mode");
-            // 
-            // cbMarkExtraFloors
-            // 
-            this.cbMarkExtraFloors.AutoSize = true;
-            this.cbMarkExtraFloors.Location = new System.Drawing.Point(18, 466);
-            this.cbMarkExtraFloors.Name = "cbMarkExtraFloors";
-            this.cbMarkExtraFloors.Size = new System.Drawing.Size(175, 17);
-            this.cbMarkExtraFloors.TabIndex = 1;
-            this.cbMarkExtraFloors.Text = "Mark 3D floors in classic modes";
-            this.toolTip1.SetToolTip(this.cbMarkExtraFloors, "When enabled, linedefs of sectors with 3d floors will be marked using \"3D Floors\"" +
-        " color.");
-            this.cbMarkExtraFloors.UseVisualStyleBackColor = true;
-            // 
             // activethingsalpha
             // 
-            this.activethingsalpha.BackColor = System.Drawing.SystemColors.Window;
+            this.activethingsalpha.BackColor = System.Drawing.Color.Transparent;
             this.activethingsalpha.LargeChange = 3;
             this.activethingsalpha.Location = new System.Drawing.Point(199, 57);
             this.activethingsalpha.Name = "activethingsalpha";
-            this.activethingsalpha.Size = new System.Drawing.Size(154, 42);
+            this.activethingsalpha.Size = new System.Drawing.Size(154, 45);
             this.activethingsalpha.TabIndex = 1;
             this.activethingsalpha.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
             this.activethingsalpha.ValueChanged += new System.EventHandler(this.activethingsalpha_ValueChanged);
@@ -1624,17 +1489,6 @@ namespace CodeImp.DoomBuilder.Windows
             this.hiddenthingsalphalabel.TabIndex = 45;
             this.hiddenthingsalphalabel.Text = "0%";
             // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(49, 158);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(139, 13);
-            this.label32.TabIndex = 44;
-            this.label32.Text = "Hidden things transparency:";
-            this.label32.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.toolTip1.SetToolTip(this.label32, "Sets transparency of things hidden \r\nby Things Filter in Things mode");
-            // 
             // inactivethingsalphalabel
             // 
             this.inactivethingsalphalabel.AutoSize = true;
@@ -1643,17 +1497,6 @@ namespace CodeImp.DoomBuilder.Windows
             this.inactivethingsalphalabel.Size = new System.Drawing.Size(21, 13);
             this.inactivethingsalphalabel.TabIndex = 42;
             this.inactivethingsalphalabel.Text = "0%";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(15, 113);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(173, 13);
-            this.label30.TabIndex = 41;
-            this.label30.Text = "Things transparency (other modes):";
-            this.label30.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.toolTip1.SetToolTip(this.label30, "Sets Things transparency in all classic\r\nmodes except Things mode");
             // 
             // labelantialiasing
             // 
@@ -1666,12 +1509,12 @@ namespace CodeImp.DoomBuilder.Windows
             // 
             // antialiasing
             // 
-            this.antialiasing.BackColor = System.Drawing.SystemColors.Window;
+            this.antialiasing.BackColor = System.Drawing.Color.Transparent;
             this.antialiasing.LargeChange = 1;
             this.antialiasing.Location = new System.Drawing.Point(199, 327);
             this.antialiasing.Maximum = 3;
             this.antialiasing.Name = "antialiasing";
-            this.antialiasing.Size = new System.Drawing.Size(154, 42);
+            this.antialiasing.Size = new System.Drawing.Size(154, 45);
             this.antialiasing.TabIndex = 9;
             this.antialiasing.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
             this.antialiasing.Value = 3;
@@ -1688,28 +1531,45 @@ namespace CodeImp.DoomBuilder.Windows
             // 
             // anisotropicfiltering
             // 
-            this.anisotropicfiltering.BackColor = System.Drawing.SystemColors.Window;
+            this.anisotropicfiltering.BackColor = System.Drawing.Color.Transparent;
             this.anisotropicfiltering.LargeChange = 1;
             this.anisotropicfiltering.Location = new System.Drawing.Point(199, 282);
             this.anisotropicfiltering.Maximum = 4;
             this.anisotropicfiltering.Name = "anisotropicfiltering";
-            this.anisotropicfiltering.Size = new System.Drawing.Size(154, 42);
+            this.anisotropicfiltering.Size = new System.Drawing.Size(154, 45);
             this.anisotropicfiltering.TabIndex = 8;
             this.anisotropicfiltering.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
             this.anisotropicfiltering.Value = 4;
             this.anisotropicfiltering.ValueChanged += new System.EventHandler(this.anisotropicfiltering_ValueChanged);
             // 
-            // cbOldHighlightMode
+            // doublesidedalphalabel
             // 
-            this.cbOldHighlightMode.AutoSize = true;
-            this.cbOldHighlightMode.Location = new System.Drawing.Point(229, 443);
-            this.cbOldHighlightMode.Name = "cbOldHighlightMode";
-            this.cbOldHighlightMode.Size = new System.Drawing.Size(207, 17);
-            this.cbOldHighlightMode.TabIndex = 15;
-            this.cbOldHighlightMode.Text = "Always show selection in visual modes";
-            this.toolTip1.SetToolTip(this.cbOldHighlightMode, "If enabled, selected surfaces will be highlighted in Visual mode\r\neven if \"Show h" +
-        "ighlight\" mode is disabled \r\n(Doom Builder 2 behaviour).");
-            this.cbOldHighlightMode.UseVisualStyleBackColor = true;
+            this.doublesidedalphalabel.AutoSize = true;
+            this.doublesidedalphalabel.Location = new System.Drawing.Point(359, 23);
+            this.doublesidedalphalabel.Name = "doublesidedalphalabel";
+            this.doublesidedalphalabel.Size = new System.Drawing.Size(21, 13);
+            this.doublesidedalphalabel.TabIndex = 16;
+            this.doublesidedalphalabel.Text = "0%";
+            // 
+            // qualitydisplay
+            // 
+            this.qualitydisplay.AutoSize = true;
+            this.qualitydisplay.Location = new System.Drawing.Point(18, 397);
+            this.qualitydisplay.Name = "qualitydisplay";
+            this.qualitydisplay.Size = new System.Drawing.Size(128, 17);
+            this.qualitydisplay.TabIndex = 10;
+            this.qualitydisplay.Text = "High quality rendering";
+            this.qualitydisplay.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(47, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(141, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Passable lines transparency:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // labelDynLightCount
             // 
@@ -1722,13 +1582,13 @@ namespace CodeImp.DoomBuilder.Windows
             // 
             // tbDynLightCount
             // 
-            this.tbDynLightCount.BackColor = System.Drawing.SystemColors.Window;
+            this.tbDynLightCount.BackColor = System.Drawing.Color.Transparent;
             this.tbDynLightCount.LargeChange = 1;
             this.tbDynLightCount.Location = new System.Drawing.Point(199, 237);
-            this.tbDynLightCount.Maximum = 8;
+            this.tbDynLightCount.Maximum = 16;
             this.tbDynLightCount.Minimum = 1;
             this.tbDynLightCount.Name = "tbDynLightCount";
-            this.tbDynLightCount.Size = new System.Drawing.Size(154, 42);
+            this.tbDynLightCount.Size = new System.Drawing.Size(154, 45);
             this.tbDynLightCount.TabIndex = 5;
             this.tbDynLightCount.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
             this.tbDynLightCount.Value = 1;
@@ -1736,11 +1596,11 @@ namespace CodeImp.DoomBuilder.Windows
             // 
             // imagebrightness
             // 
-            this.imagebrightness.BackColor = System.Drawing.SystemColors.Window;
+            this.imagebrightness.BackColor = System.Drawing.Color.Transparent;
             this.imagebrightness.LargeChange = 3;
             this.imagebrightness.Location = new System.Drawing.Point(199, 192);
             this.imagebrightness.Name = "imagebrightness";
-            this.imagebrightness.Size = new System.Drawing.Size(154, 42);
+            this.imagebrightness.Size = new System.Drawing.Size(154, 45);
             this.imagebrightness.TabIndex = 4;
             this.imagebrightness.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
             this.imagebrightness.ValueChanged += new System.EventHandler(this.imagebrightness_ValueChanged);
@@ -1757,25 +1617,36 @@ namespace CodeImp.DoomBuilder.Windows
             // 
             // hiddenthingsalpha
             // 
-            this.hiddenthingsalpha.BackColor = System.Drawing.SystemColors.Window;
+            this.hiddenthingsalpha.BackColor = System.Drawing.Color.Transparent;
             this.hiddenthingsalpha.LargeChange = 3;
             this.hiddenthingsalpha.Location = new System.Drawing.Point(199, 147);
             this.hiddenthingsalpha.Name = "hiddenthingsalpha";
-            this.hiddenthingsalpha.Size = new System.Drawing.Size(154, 42);
+            this.hiddenthingsalpha.Size = new System.Drawing.Size(154, 45);
             this.hiddenthingsalpha.TabIndex = 3;
             this.hiddenthingsalpha.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
             this.hiddenthingsalpha.ValueChanged += new System.EventHandler(this.hiddenthingsalpha_ValueChanged);
             // 
             // inactivethingsalpha
             // 
-            this.inactivethingsalpha.BackColor = System.Drawing.SystemColors.Window;
+            this.inactivethingsalpha.BackColor = System.Drawing.Color.Transparent;
             this.inactivethingsalpha.LargeChange = 3;
             this.inactivethingsalpha.Location = new System.Drawing.Point(199, 102);
             this.inactivethingsalpha.Name = "inactivethingsalpha";
-            this.inactivethingsalpha.Size = new System.Drawing.Size(154, 42);
+            this.inactivethingsalpha.Size = new System.Drawing.Size(154, 45);
             this.inactivethingsalpha.TabIndex = 2;
             this.inactivethingsalpha.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
             this.inactivethingsalpha.ValueChanged += new System.EventHandler(this.inactivethingsalpha_ValueChanged);
+            // 
+            // doublesidedalpha
+            // 
+            this.doublesidedalpha.BackColor = System.Drawing.Color.Transparent;
+            this.doublesidedalpha.LargeChange = 3;
+            this.doublesidedalpha.Location = new System.Drawing.Point(199, 12);
+            this.doublesidedalpha.Name = "doublesidedalpha";
+            this.doublesidedalpha.Size = new System.Drawing.Size(154, 45);
+            this.doublesidedalpha.TabIndex = 0;
+            this.doublesidedalpha.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+            this.doublesidedalpha.ValueChanged += new System.EventHandler(this.doublesidedalpha_ValueChanged);
             // 
             // visualbilinear
             // 
@@ -1806,6 +1677,162 @@ namespace CodeImp.DoomBuilder.Windows
             this.imagebrightnesslabel.TabIndex = 22;
             this.imagebrightnesslabel.Text = "+ 0 y";
             // 
+            // colorsgroup1
+            // 
+            this.colorsgroup1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.colorsgroup1.Controls.Add(this.colorguidelines);
+            this.colorsgroup1.Controls.Add(this.color3dFloors);
+            this.colorsgroup1.Controls.Add(this.colorInfo);
+            this.colorsgroup1.Controls.Add(this.colorMD3);
+            this.colorsgroup1.Controls.Add(this.colorgrid64);
+            this.colorsgroup1.Controls.Add(this.colorgrid);
+            this.colorsgroup1.Controls.Add(this.colorindication);
+            this.colorsgroup1.Controls.Add(this.colorbackcolor);
+            this.colorsgroup1.Controls.Add(this.colorselection);
+            this.colorsgroup1.Controls.Add(this.colorvertices);
+            this.colorsgroup1.Controls.Add(this.colorhighlight);
+            this.colorsgroup1.Controls.Add(this.colorlinedefs);
+            this.colorsgroup1.Location = new System.Drawing.Point(8, 8);
+            this.colorsgroup1.Name = "colorsgroup1";
+            this.colorsgroup1.Size = new System.Drawing.Size(203, 493);
+            this.colorsgroup1.TabIndex = 0;
+            this.colorsgroup1.TabStop = false;
+            this.colorsgroup1.Text = " Colors ";
+            this.colorsgroup1.Visible = false;
+            // 
+            // colorguidelines
+            // 
+            this.colorguidelines.BackColor = System.Drawing.Color.Transparent;
+            this.colorguidelines.Label = "Guidelines:";
+            this.colorguidelines.Location = new System.Drawing.Point(15, 307);
+            this.colorguidelines.MaximumSize = new System.Drawing.Size(10000, 23);
+            this.colorguidelines.MinimumSize = new System.Drawing.Size(100, 23);
+            this.colorguidelines.Name = "colorguidelines";
+            this.colorguidelines.Size = new System.Drawing.Size(168, 23);
+            this.colorguidelines.TabIndex = 11;
+            // 
+            // color3dFloors
+            // 
+            this.color3dFloors.BackColor = System.Drawing.Color.Transparent;
+            this.color3dFloors.Label = "3D Floors:";
+            this.color3dFloors.Location = new System.Drawing.Point(15, 336);
+            this.color3dFloors.MaximumSize = new System.Drawing.Size(10000, 23);
+            this.color3dFloors.MinimumSize = new System.Drawing.Size(100, 23);
+            this.color3dFloors.Name = "color3dFloors";
+            this.color3dFloors.Size = new System.Drawing.Size(168, 23);
+            this.color3dFloors.TabIndex = 10;
+            // 
+            // colorInfo
+            // 
+            this.colorInfo.BackColor = System.Drawing.Color.Transparent;
+            this.colorInfo.Label = "Event lines:";
+            this.colorInfo.Location = new System.Drawing.Point(15, 278);
+            this.colorInfo.MaximumSize = new System.Drawing.Size(10000, 23);
+            this.colorInfo.MinimumSize = new System.Drawing.Size(100, 23);
+            this.colorInfo.Name = "colorInfo";
+            this.colorInfo.Size = new System.Drawing.Size(168, 23);
+            this.colorInfo.TabIndex = 9;
+            // 
+            // colorMD3
+            // 
+            this.colorMD3.BackColor = System.Drawing.Color.Transparent;
+            this.colorMD3.Label = "Model wireframe:";
+            this.colorMD3.Location = new System.Drawing.Point(15, 249);
+            this.colorMD3.MaximumSize = new System.Drawing.Size(10000, 23);
+            this.colorMD3.MinimumSize = new System.Drawing.Size(100, 23);
+            this.colorMD3.Name = "colorMD3";
+            this.colorMD3.Size = new System.Drawing.Size(168, 23);
+            this.colorMD3.TabIndex = 8;
+            // 
+            // colorgrid64
+            // 
+            this.colorgrid64.BackColor = System.Drawing.Color.Transparent;
+            this.colorgrid64.Label = "64 Block grid:";
+            this.colorgrid64.Location = new System.Drawing.Point(15, 220);
+            this.colorgrid64.MaximumSize = new System.Drawing.Size(10000, 23);
+            this.colorgrid64.MinimumSize = new System.Drawing.Size(100, 23);
+            this.colorgrid64.Name = "colorgrid64";
+            this.colorgrid64.Size = new System.Drawing.Size(168, 23);
+            this.colorgrid64.TabIndex = 7;
+            // 
+            // colorgrid
+            // 
+            this.colorgrid.BackColor = System.Drawing.Color.Transparent;
+            this.colorgrid.Label = "Custom grid:";
+            this.colorgrid.Location = new System.Drawing.Point(15, 191);
+            this.colorgrid.MaximumSize = new System.Drawing.Size(10000, 23);
+            this.colorgrid.MinimumSize = new System.Drawing.Size(100, 23);
+            this.colorgrid.Name = "colorgrid";
+            this.colorgrid.Size = new System.Drawing.Size(168, 23);
+            this.colorgrid.TabIndex = 6;
+            // 
+            // colorindication
+            // 
+            this.colorindication.BackColor = System.Drawing.Color.Transparent;
+            this.colorindication.Label = "Indications:";
+            this.colorindication.Location = new System.Drawing.Point(15, 162);
+            this.colorindication.MaximumSize = new System.Drawing.Size(10000, 23);
+            this.colorindication.MinimumSize = new System.Drawing.Size(100, 23);
+            this.colorindication.Name = "colorindication";
+            this.colorindication.Size = new System.Drawing.Size(168, 23);
+            this.colorindication.TabIndex = 5;
+            // 
+            // colorbackcolor
+            // 
+            this.colorbackcolor.BackColor = System.Drawing.Color.Transparent;
+            this.colorbackcolor.Label = "Background:";
+            this.colorbackcolor.Location = new System.Drawing.Point(15, 17);
+            this.colorbackcolor.MaximumSize = new System.Drawing.Size(10000, 23);
+            this.colorbackcolor.MinimumSize = new System.Drawing.Size(100, 23);
+            this.colorbackcolor.Name = "colorbackcolor";
+            this.colorbackcolor.Size = new System.Drawing.Size(168, 23);
+            this.colorbackcolor.TabIndex = 0;
+            // 
+            // colorselection
+            // 
+            this.colorselection.BackColor = System.Drawing.Color.Transparent;
+            this.colorselection.Label = "Selection:";
+            this.colorselection.Location = new System.Drawing.Point(15, 133);
+            this.colorselection.MaximumSize = new System.Drawing.Size(10000, 23);
+            this.colorselection.MinimumSize = new System.Drawing.Size(100, 23);
+            this.colorselection.Name = "colorselection";
+            this.colorselection.Size = new System.Drawing.Size(168, 23);
+            this.colorselection.TabIndex = 4;
+            // 
+            // colorvertices
+            // 
+            this.colorvertices.BackColor = System.Drawing.Color.Transparent;
+            this.colorvertices.Label = "Vertices:";
+            this.colorvertices.Location = new System.Drawing.Point(15, 46);
+            this.colorvertices.MaximumSize = new System.Drawing.Size(10000, 23);
+            this.colorvertices.MinimumSize = new System.Drawing.Size(100, 23);
+            this.colorvertices.Name = "colorvertices";
+            this.colorvertices.Size = new System.Drawing.Size(168, 23);
+            this.colorvertices.TabIndex = 1;
+            // 
+            // colorhighlight
+            // 
+            this.colorhighlight.BackColor = System.Drawing.Color.Transparent;
+            this.colorhighlight.Label = "Highlight:";
+            this.colorhighlight.Location = new System.Drawing.Point(15, 104);
+            this.colorhighlight.MaximumSize = new System.Drawing.Size(10000, 23);
+            this.colorhighlight.MinimumSize = new System.Drawing.Size(100, 23);
+            this.colorhighlight.Name = "colorhighlight";
+            this.colorhighlight.Size = new System.Drawing.Size(168, 23);
+            this.colorhighlight.TabIndex = 3;
+            // 
+            // colorlinedefs
+            // 
+            this.colorlinedefs.BackColor = System.Drawing.Color.Transparent;
+            this.colorlinedefs.Label = "Common lines:";
+            this.colorlinedefs.Location = new System.Drawing.Point(15, 75);
+            this.colorlinedefs.MaximumSize = new System.Drawing.Size(10000, 23);
+            this.colorlinedefs.MinimumSize = new System.Drawing.Size(100, 23);
+            this.colorlinedefs.Name = "colorlinedefs";
+            this.colorlinedefs.Size = new System.Drawing.Size(168, 23);
+            this.colorlinedefs.TabIndex = 2;
+            // 
             // tabscripteditor
             // 
             this.tabscripteditor.Controls.Add(this.groupBox9);
@@ -1816,7 +1843,7 @@ namespace CodeImp.DoomBuilder.Windows
             this.tabscripteditor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabscripteditor.Location = new System.Drawing.Point(4, 22);
             this.tabscripteditor.Name = "tabscripteditor";
-            this.tabscripteditor.Size = new System.Drawing.Size(682, 510);
+            this.tabscripteditor.Size = new System.Drawing.Size(662, 484);
             this.tabscripteditor.TabIndex = 4;
             this.tabscripteditor.Text = "Script Editor";
             this.tabscripteditor.UseVisualStyleBackColor = true;
@@ -1880,18 +1907,6 @@ namespace CodeImp.DoomBuilder.Windows
             this.scriptautoshowautocompletion.Text = "Auto show auto-completion list";
             this.scriptautoshowautocompletion.UseVisualStyleBackColor = true;
             // 
-            // scriptautoclosebrackets
-            // 
-            this.scriptautoclosebrackets.AutoSize = true;
-            this.scriptautoclosebrackets.Location = new System.Drawing.Point(19, 72);
-            this.scriptautoclosebrackets.Name = "scriptautoclosebrackets";
-            this.scriptautoclosebrackets.Size = new System.Drawing.Size(120, 17);
-            this.scriptautoclosebrackets.TabIndex = 3;
-            this.scriptautoclosebrackets.Text = "Auto-close brackets";
-            this.toolTip1.SetToolTip(this.scriptautoclosebrackets, "When enabled, the editor will automatically\r\ninsert closing bracket if opening br" +
-        "acket was typed.");
-            this.scriptautoclosebrackets.UseVisualStyleBackColor = true;
-            // 
             // scriptusetabs
             // 
             this.scriptusetabs.AutoSize = true;
@@ -1901,17 +1916,6 @@ namespace CodeImp.DoomBuilder.Windows
             this.scriptusetabs.TabIndex = 0;
             this.scriptusetabs.Text = "Use tabs";
             this.scriptusetabs.UseVisualStyleBackColor = true;
-            // 
-            // scriptallmanstyle
-            // 
-            this.scriptallmanstyle.AutoSize = true;
-            this.scriptallmanstyle.Location = new System.Drawing.Point(19, 95);
-            this.scriptallmanstyle.Name = "scriptallmanstyle";
-            this.scriptallmanstyle.Size = new System.Drawing.Size(119, 17);
-            this.scriptallmanstyle.TabIndex = 4;
-            this.scriptallmanstyle.Text = "Allman-style bracing";
-            this.toolTip1.SetToolTip(this.scriptallmanstyle, resources.GetString("scriptallmanstyle.ToolTip"));
-            this.scriptallmanstyle.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -2332,7 +2336,7 @@ namespace CodeImp.DoomBuilder.Windows
             this.tabpasting.Location = new System.Drawing.Point(4, 22);
             this.tabpasting.Name = "tabpasting";
             this.tabpasting.Padding = new System.Windows.Forms.Padding(5);
-            this.tabpasting.Size = new System.Drawing.Size(682, 510);
+            this.tabpasting.Size = new System.Drawing.Size(662, 484);
             this.tabpasting.TabIndex = 3;
             this.tabpasting.Text = "Pasting ";
             this.tabpasting.UseVisualStyleBackColor = true;
@@ -2359,17 +2363,13 @@ namespace CodeImp.DoomBuilder.Windows
             this.pasteoptions.Size = new System.Drawing.Size(666, 427);
             this.pasteoptions.TabIndex = 0;
             // 
-            // browseScreenshotsFolderDialog
-            // 
-            this.browseScreenshotsFolderDialog.Description = "Select a Folder to Save Screenshots Into";
-            // 
             // PreferencesForm
             // 
             this.AcceptButton = this.apply;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.CancelButton = this.cancel;
-            this.ClientSize = new System.Drawing.Size(711, 594);
+            this.ClientSize = new System.Drawing.Size(691, 568);
             this.Controls.Add(this.cancel);
             this.Controls.Add(this.apply);
             this.Controls.Add(this.tabs);
@@ -2390,8 +2390,6 @@ namespace CodeImp.DoomBuilder.Windows
             ((System.ComponentModel.ISupportInitialize)(this.vertexScale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zoomfactor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoscrollspeed)).EndInit();
-            this.colorsgroup1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.doublesidedalpha)).EndInit();
             this.tabs.ResumeLayout(false);
             this.tabinterface.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
@@ -2423,6 +2421,8 @@ namespace CodeImp.DoomBuilder.Windows
             ((System.ComponentModel.ISupportInitialize)(this.imagebrightness)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hiddenthingsalpha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inactivethingsalpha)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doublesidedalpha)).EndInit();
+            this.colorsgroup1.ResumeLayout(false);
             this.tabscripteditor.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
@@ -2478,19 +2478,19 @@ namespace CodeImp.DoomBuilder.Windows
 		private System.Windows.Forms.CheckBox invertyaxis;
 		private System.Windows.Forms.ComboBox defaultviewmode;
 		private System.Windows.Forms.Label label14;
-		private System.Windows.Forms.TrackBar fieldofview;
-		private System.Windows.Forms.TrackBar movespeed;
-		private System.Windows.Forms.TrackBar mousespeed;
-		private System.Windows.Forms.TrackBar viewdistance;
-		private System.Windows.Forms.TrackBar doublesidedalpha;
-		private System.Windows.Forms.TrackBar imagebrightness;
+		private CodeImp.DoomBuilder.Controls.TransparentTrackBar fieldofview;
+		private CodeImp.DoomBuilder.Controls.TransparentTrackBar movespeed;
+		private CodeImp.DoomBuilder.Controls.TransparentTrackBar mousespeed;
+		private CodeImp.DoomBuilder.Controls.TransparentTrackBar viewdistance;
+		private CodeImp.DoomBuilder.Controls.TransparentTrackBar doublesidedalpha;
+		private CodeImp.DoomBuilder.Controls.TransparentTrackBar imagebrightness;
 		private System.Windows.Forms.Label disregardshiftlabel;
 		private System.Windows.Forms.ListBox keyusedlist;
 		private System.Windows.Forms.Label keyusedlabel;
 		private System.Windows.Forms.CheckBox qualitydisplay;
 		private System.Windows.Forms.CheckBox visualbilinear;
 		private System.Windows.Forms.CheckBox classicbilinear;
-		private System.Windows.Forms.TrackBar autoscrollspeed;
+		private CodeImp.DoomBuilder.Controls.TransparentTrackBar autoscrollspeed;
 		private System.Windows.Forms.Label autoscrollspeedlabel;
 		private System.Windows.Forms.Label label15;
 		private System.Windows.Forms.CheckBox animatevisualselection;
@@ -2502,7 +2502,7 @@ namespace CodeImp.DoomBuilder.Windows
 		private System.Windows.Forms.ComboBox dockersposition;
 		private System.Windows.Forms.Label label17;
 		private System.Windows.Forms.CheckBox collapsedockers;
-		private System.Windows.Forms.TrackBar zoomfactor;
+		private CodeImp.DoomBuilder.Controls.TransparentTrackBar zoomfactor;
 		private System.Windows.Forms.Label zoomfactorlabel;
 		private System.Windows.Forms.Label label19;
 		private System.Windows.Forms.GroupBox groupBox5;
@@ -2520,11 +2520,11 @@ namespace CodeImp.DoomBuilder.Windows
 		private CodeImp.DoomBuilder.Controls.ColorControl colorMD3;
 		private System.Windows.Forms.CheckBox toolbar_gzdoom;
 		private System.Windows.Forms.Label labelDynLightCount;
-		private System.Windows.Forms.TrackBar tbDynLightCount;
+		private CodeImp.DoomBuilder.Controls.TransparentTrackBar tbDynLightCount;
 		private System.Windows.Forms.CheckBox cbSynchCameras;
 		private System.Windows.Forms.CheckBox cbStretchView;
 		private System.Windows.Forms.ToolTip toolTip1;
-		private System.Windows.Forms.TrackBar vertexScale;
+		private CodeImp.DoomBuilder.Controls.TransparentTrackBar vertexScale;
 		private System.Windows.Forms.Label vertexScaleLabel;
 		private System.Windows.Forms.Label label22;
 		private CodeImp.DoomBuilder.Controls.ColorControl colorInfo;
@@ -2535,7 +2535,7 @@ namespace CodeImp.DoomBuilder.Windows
 		private CodeImp.DoomBuilder.Controls.ColorControl color3dFloors;
 		private System.Windows.Forms.TextBox actiondescription;
 		private System.Windows.Forms.CheckBox cbMarkExtraFloors;
-		private System.Windows.Forms.TrackBar recentFiles;
+		private CodeImp.DoomBuilder.Controls.TransparentTrackBar recentFiles;
 		private System.Windows.Forms.Label labelRecentFiles;
 		private System.Windows.Forms.Label label25;
 		private System.Windows.Forms.GroupBox groupBox3;
@@ -2543,7 +2543,7 @@ namespace CodeImp.DoomBuilder.Windows
 		private System.Windows.Forms.TextBox screenshotsfolderpath;
 		private System.Windows.Forms.Button resetscreenshotsdir;
 		private System.Windows.Forms.FolderBrowserDialog browseScreenshotsFolderDialog;
-		private System.Windows.Forms.TrackBar vertexScale3D;
+		private CodeImp.DoomBuilder.Controls.TransparentTrackBar vertexScale3D;
 		private System.Windows.Forms.Label vertexScale3DLabel;
 		private System.Windows.Forms.Label label26;
 		private System.Windows.Forms.CheckBox locatetexturegroup;
@@ -2591,18 +2591,18 @@ namespace CodeImp.DoomBuilder.Windows
 		private System.Windows.Forms.Label label23;
 		private CodeImp.DoomBuilder.Controls.ColorControl colorproperties;
 		private System.Windows.Forms.Label labelantialiasing;
-		private System.Windows.Forms.TrackBar antialiasing;
+		private CodeImp.DoomBuilder.Controls.TransparentTrackBar antialiasing;
 		private System.Windows.Forms.Label labelanisotropicfiltering;
-		private System.Windows.Forms.TrackBar anisotropicfiltering;
-		private System.Windows.Forms.TrackBar inactivethingsalpha;
+		private CodeImp.DoomBuilder.Controls.TransparentTrackBar anisotropicfiltering;
+		private CodeImp.DoomBuilder.Controls.TransparentTrackBar inactivethingsalpha;
 		private System.Windows.Forms.Label inactivethingsalphalabel;
 		private System.Windows.Forms.Label label30;
 		private System.Windows.Forms.Label hiddenthingsalphalabel;
 		private System.Windows.Forms.Label label32;
-		private System.Windows.Forms.TrackBar hiddenthingsalpha;
+		private CodeImp.DoomBuilder.Controls.TransparentTrackBar hiddenthingsalpha;
 		private System.Windows.Forms.Label activethingsalphalabel;
 		private System.Windows.Forms.Label label31;
-		private System.Windows.Forms.TrackBar activethingsalpha;
+		private CodeImp.DoomBuilder.Controls.TransparentTrackBar activethingsalpha;
 		private System.Windows.Forms.CheckBox blackbrowsers;
 		private System.Windows.Forms.GroupBox groupBox11;
 		private System.Windows.Forms.Label label28;
